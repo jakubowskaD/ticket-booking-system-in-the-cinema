@@ -9,6 +9,10 @@ public class Hall {
     private final int numberOfSeats;
     public List<Seat> seats = new ArrayList<>();
 
+    public Hall(int hallNumber) {
+        this.hallNumber = hallNumber;
+    }
+
     public Hall(int hallNumber, String movieTitle, int numberOfSeats) {
         this.hallNumber = hallNumber;
         this.movieTitle = movieTitle;
@@ -26,6 +30,7 @@ public class Hall {
     public int getNumberOfSeats() {
         return numberOfSeats;
     }
+
     public int getNumberOfFreeSeats(){
         int allSeats = seats.size();
         int freeSeats = allSeats;
@@ -35,8 +40,8 @@ public class Hall {
             }
         }
         return freeSeats;
-
     }
-
-
+    public boolean isFreeSeats(){
+        return getNumberOfFreeSeats() > 0;
+    }
 }

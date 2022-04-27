@@ -1,7 +1,7 @@
 package cinema;
 
 import cinema.hall.Hall;
-import cinema.movie.Movie;
+import cinema.hall.Movie;
 
 import java.util.*;
 
@@ -11,10 +11,10 @@ public class TicketOffice {
     Map<Integer, Movie> movies = new HashMap<>();
 
     public TicketOffice() {
-        movies.put(1,new Movie("Pulp Fiction"));
-        movies.put(2,new Movie("Lion King"));
-        movies.put(3,new Movie("Ciacho"));
-        movies.put(4,new Movie("Star Wars - marathon"));
+        movies.put(1,new Movie("Pulp Fiction", 1));
+        movies.put(2,new Movie("Lion King", 2));
+        movies.put(3,new Movie("Ciacho", 3));
+        movies.put(4,new Movie("Star Wars - marathon", 4));
         halls.add(new Hall(1,movies.get(1).getTitle(),30));
         halls.add(new Hall(2,movies.get(2).getTitle(), 15));
         halls.add(new Hall(3,movies.get(3).getTitle(), 20));
@@ -34,7 +34,9 @@ public class TicketOffice {
 //            commands.get(scanner.nextLine()).run(this);
         }
     }
-   public void seal(String movieNumber){
-
+   public void seal(int movieNumber){
+        if(movies.get(movieNumber).isFreeSeats()){
+            System.out.println("Movie: " + movies.get(movieNumber).getTitle() + ", hall: " + movies.get(movieNumber).getHallNumber());
+        }else System.out.println("Sorry, no available seats.");
    }
 }
