@@ -22,7 +22,6 @@ public class TicketOffice {
         halls.add(new Hall(2,movies.get(2).getTitle(), 15));
         halls.add(new Hall(3,movies.get(3).getTitle(), 20));
         halls.add(new Hall(4,movies.get(4).getTitle(),25));
-
     }
 
 }
