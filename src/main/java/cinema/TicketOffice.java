@@ -34,7 +34,7 @@ public class TicketOffice {
 //            commands.get(scanner.nextLine()).run(this);
         }
     }
-   public void seal(){
+   public void seal(String movieNumber){
 
    }
 }
