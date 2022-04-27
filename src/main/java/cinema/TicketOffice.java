@@ -3,10 +3,7 @@ package cinema;
 import cinema.hall.Hall;
 import cinema.movie.Movie;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class TicketOffice {
 
@@ -24,4 +21,20 @@ public class TicketOffice {
         halls.add(new Hall(4,movies.get(4).getTitle(),25));
     }
 
+    public void run(){
+        Scanner scanner = new Scanner(System.in);
+        boolean inOffice = true;
+        while (inOffice){
+            System.out.println("\nMovies:\n");
+            for (int i=1; i<= movies.size();i++){
+                System.out.println(i + ". " + movies.get(i).getTitle() + "\n");
+            }
+            System.out.println("0. Off");
+            String movieNumber = scanner.nextLine();
+//            commands.get(scanner.nextLine()).run(this);
+        }
+    }
+   public void seal(){
+
+   }
 }
