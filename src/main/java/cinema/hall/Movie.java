@@ -1,10 +1,9 @@
 package cinema.hall;
 
-public class Movie extends Hall {
+public class Movie {
     public String title;
 
-    public Movie(String title, int hallNumber) {
-        super(hallNumber);
+    public Movie(String title) {
         this.title = title;
 
     }

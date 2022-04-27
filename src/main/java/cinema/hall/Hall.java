@@ -5,17 +5,13 @@ import java.util.List;
 
 public class Hall {
     private final int hallNumber;
-    private String movieTitle;
     private int numberOfSeats;
     public List<Seat> seats = new ArrayList<>();
+    Movie movie;
 
-    public Hall(int hallNumber) {
+    public Hall(int hallNumber, Movie movie, int numberOfSeats) {
         this.hallNumber = hallNumber;
-    }
-
-    public Hall(int hallNumber, String movieTitle, int numberOfSeats) {
-        this.hallNumber = hallNumber;
-        this.movieTitle = movieTitle;
+        this.movie = movie;
         this.numberOfSeats = numberOfSeats;
     }
 
@@ -32,8 +28,8 @@ public class Hall {
     }
 
     public int getNumberOfFreeSeats(){
-//        int allSeats = seats.size();
-        int allSeats = getNumberOfSeats();
+        int allSeats = seats.size();
+//        int allSeats = getNumberOfSeats();
         int freeSeats = allSeats;
         for (Seat seat : seats) {
             if (!seat.isAvailable) {
@@ -43,7 +39,11 @@ public class Hall {
         return freeSeats;
     }
     public boolean isFreeSeats(){
-//        return getNumberOfFreeSeats() > 0;
-        return true;
+        return getNumberOfFreeSeats() > 0;
+//        return true;
+    }
+
+    public List<Seat> getSeats(int numberOfSeats){
+
     }
 }

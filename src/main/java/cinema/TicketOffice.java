@@ -15,7 +15,7 @@ public class TicketOffice {
         movies.put(2,new Movie("Lion King", 2));
         movies.put(3,new Movie("Ciacho", 3));
         movies.put(4,new Movie("Star Wars - marathon", 4));
-        halls.add(new Hall(1,movies.get(1).getTitle(),30));
+        halls.add(new Hall(1, new Movie("Pulp Fiction"),30));
         halls.add(new Hall(2,movies.get(2).getTitle(), 15));
         halls.add(new Hall(3,movies.get(3).getTitle(), 20));
         halls.add(new Hall(4,movies.get(4).getTitle(),25));
