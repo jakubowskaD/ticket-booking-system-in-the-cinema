@@ -34,4 +34,11 @@ public class Seat {
     public void setAvailable(boolean available) {
         isAvailable = available;
     }
+
+    @Override
+    public String toString() {
+        return "Seat: " +
+                "row = " + row +
+                ", place = " + place;
+    }
 }
