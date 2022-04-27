@@ -23,10 +23,10 @@ public class TicketOffice {
         boolean inOffice = true;
         while (inOffice){
             System.out.println("\nMovies:\n");
-            for (int i=1; i<= movies.size();i++){
-                System.out.println(i + ". " + halls.get(i).getMovieTitle() + "\n");
-                movies.put(i, new Movie(halls.get(i).getMovieTitle()));
+            for (int i=1; i<= halls.size();i++){
+                movies.put(i+1, new Movie(halls.get(i).getMovieTitle()));
                 halls.get(i).getSeats(halls.get(i).getHallType(), halls.get(i).getNumberOfSeats());
+                System.out.println(i + ". " + halls.get(i).getMovieTitle() + "\n");
             }
             System.out.println("0. Off");
             String movieNumber = scanner.nextLine();
@@ -38,7 +38,7 @@ public class TicketOffice {
     }
    public void seal(int movieNumber){
         if(halls.get(movieNumber).isFreeSeats()){
-            System.out.println("Movie: " + halls.get(movieNumber).getMovieTitle());
+            System.out.println("Movie: " + movies.get(movieNumber).getTitle());
             System.out.println(", hall: " + halls.get(movieNumber).getNumberOfSeats());
 
             System.out.println("We wish you a successful screening.");

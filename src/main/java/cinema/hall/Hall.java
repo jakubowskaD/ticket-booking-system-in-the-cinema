@@ -56,7 +56,6 @@ public class Hall {
             for (int i=1; i<=numberOfSeats;i++){
                 for (int j=1;j<=i;j++){
                     seats.add(new Seat(i,j,true));
-                    System.out.println(".");
                 }
             }return seats;
 
