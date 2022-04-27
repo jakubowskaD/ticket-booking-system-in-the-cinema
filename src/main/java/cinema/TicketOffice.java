@@ -32,11 +32,16 @@ public class TicketOffice {
             System.out.println("0. Off");
             String movieNumber = scanner.nextLine();
 //            commands.get(scanner.nextLine()).run(this);
+            if (movieNumber.equals("0")){
+                System.exit(0);
+            }
+            seal(Integer.parseInt(movieNumber));
         }
     }
    public void seal(int movieNumber){
         if(movies.get(movieNumber).isFreeSeats()){
             System.out.println("Movie: " + movies.get(movieNumber).getTitle() + ", hall: " + movies.get(movieNumber).getHallNumber());
+            System.out.println("We wish you a successful screening.");
         }else System.out.println("Sorry, no available seats.");
    }
 }

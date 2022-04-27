@@ -6,7 +6,7 @@ import java.util.List;
 public class Hall {
     private final int hallNumber;
     private String movieTitle;
-    private final int numberOfSeats;
+    private int numberOfSeats;
     public List<Seat> seats = new ArrayList<>();
 
     public Hall(int hallNumber) {
@@ -32,7 +32,8 @@ public class Hall {
     }
 
     public int getNumberOfFreeSeats(){
-        int allSeats = seats.size();
+//        int allSeats = seats.size();
+        int allSeats = getNumberOfSeats();
         int freeSeats = allSeats;
         for (Seat seat : seats) {
             if (!seat.isAvailable) {
@@ -42,6 +43,7 @@ public class Hall {
         return freeSeats;
     }
     public boolean isFreeSeats(){
-        return getNumberOfFreeSeats() > 0;
+//        return getNumberOfFreeSeats() > 0;
+        return true;
     }
 }
